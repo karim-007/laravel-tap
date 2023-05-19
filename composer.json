@@ -1,0 +1,40 @@
+{
+    "name": "karim007/laravel-tap",
+    "description": "Tap payment gateway for laravel",
+    "type": "library",
+    "keywords": [
+        "TAP",
+        "tap-payment-gateway",
+        "tap-payment",
+        "laravel-tap",
+        "laravel-tap-payment"
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1|^8.2",
+        "illuminate/support": "^6|^7|^8|^9|^10",
+        "ext-curl": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Karim007\\LaravelTap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md abdul karim",
+            "email": "karim.cse007@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Karim007\\LaravelTap\\LaravelTapServiceProvider"
+            ],
+            "aliases": {
+                "LaravelBkashTokenize": "Karim007\\LaravelTap\\LaravelTap"
+            }
+        }
+    }
+}
