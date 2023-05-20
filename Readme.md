@@ -17,8 +17,6 @@ composer require karim007/laravel-tap
 
 ## Examples
 ![]()<img src="example/tap1.png" alt="tap" width="150" height="150">
-![]()<img src="example/tap2.png" alt="tap" width="150" height="150">
-![]()<img src="example/tap3.png" alt="tap" width="150" height="150">
 ![]()<img src="example/tap4.png" alt="tap" width="150" height="150">
 ![]()<img src="example/tap5.png" alt="tap" width="150" height="150">
 
