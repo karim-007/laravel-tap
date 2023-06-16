@@ -18,7 +18,7 @@ class TapPayment extends TapBaseApi
             $data['authAPIKey'] = config("tap.authAPIKey$account");
             $data['popUpCloseTimeOut'] = 60;
             $data['paymentMode'] = $paymentMode;
-            return view('tap::tap-payment',compact('data'))->render();
+            return view('tapView::tap-payment',compact('data'))->render();
         }
         return  response()->json(['status'=>'Unauthorized','message'=>'Your provided credential are invalid']);
     }
@@ -39,15 +39,15 @@ class TapPayment extends TapBaseApi
 
     public function success($message,$transId)
     {
-        return view('tap::success',compact('message','transId'));
+        return view('tapView::success',compact('message','transId'));
     }
     public function cancel($message,$transId=null)
     {
-        return view('tap::failed',compact('message','transId'));
+        return view('tapView::failed',compact('message','transId'));
     }
     public function failure($message,$transId=null)
     {
-        return view('tap::failed',compact('message','transId'));
+        return view('tapView::failed',compact('message','transId'));
     }
 
 }

@@ -21,8 +21,7 @@ class LaravelTapServiceProvider extends ServiceProvider
             __DIR__.'/Controllers/TapPaymentController.php' => app_path('Http/Controllers/TapPaymentController.php'),
         ],'controllers');
 
-        //$this->loadRoutesFrom(__DIR__ . "/routes/tap_route.php");
-        $this->loadViewsFrom(__DIR__ . '/Views', 'tap');
+        $this->loadViewsFrom(__DIR__ . '/Views', 'tapView');
     }
 
     /**

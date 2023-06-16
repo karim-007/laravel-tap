@@ -21,11 +21,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/arrive/2.4.1/arrive.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-@if(config('tap.sandbox' == false))
+@php
+$tap_cnf = config('tap.sandbox');
+@endphp
+
+@if(!$tap_cnf)
     <script src="https://merchant-pg-ui-prod.tadlbd.com/script.js"></script>
 @else
     <script src="https://mwstaging.tadlbd.com/merchant-pg-sandbox/pg-ui/script.js"></script>
-
 @endif
 
 <script>

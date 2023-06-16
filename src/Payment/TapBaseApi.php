@@ -24,7 +24,7 @@ class TapBaseApi
      */
     private function baseUrl()
     {
-        if (config("tap.sandbox") == true) {
+        if (config("tap.sandbox")) {
             $this->baseUrl = 'https://auth-sandbox.tadlbd.com';
         } else {
             $this->baseUrl = 'https://auth-prod.tadlbd.com';
