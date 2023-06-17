@@ -3,13 +3,6 @@
 namespace Karim007\LaravelTap\Traits;
 trait Helpers
 {
-    /**
-     * @return string|null
-     */
-    public function getIp()
-    {
-        return request()->ip();
-    }
 
     protected function getUrlToken($url,$refresh_token=null, $account=null)
     {

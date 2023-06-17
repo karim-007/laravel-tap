@@ -2,11 +2,8 @@
 
 namespace Karim007\LaravelTap\Payment;
 
-use Karim007\LaravelTap\Traits\Helpers;
-
 class TapBaseApi
 {
-    use Helpers;
 
     /**
      * @var string $baseUrl
@@ -29,20 +26,5 @@ class TapBaseApi
         } else {
             $this->baseUrl = 'https://auth-prod.tadlbd.com';
         }
-    }
-
-    /**
-     * bkash Request Headers
-     *
-     * @return array
-     */
-    protected function headers()
-    {
-        return [
-            "Content-Type"     => "application/json",
-            "X-KM-IP-V4"       => $this->getIp(),
-            "X-KM-Api-Version" => "v-0.2.0",
-            "X-KM-Client-Type" => "PC_WEB",
-        ];
     }
 }
