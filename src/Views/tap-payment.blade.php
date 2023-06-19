@@ -77,7 +77,7 @@ $tap_cnf = config('tap.sandbox');
         return os;
     }
     function callSuccess(response){
-        window.location.href="{{ $data['callBackUrl'] }}?status="+response.transactionStatus+"&transactionId="
+        window.location.href="{{ $data['callBackUrl'] }}?status=completed&transactionId="
             +response.transactionId+"&requestorReferenceId="+response.requestorReferenceId+
             "&invoiceNumber="+response.invoiceNumber
     }
@@ -98,8 +98,6 @@ $tap_cnf = config('tap.sandbox');
     }
 
     function tapWindowClosed(response){
-        console.log('window close')
-        console.log(response)
        /* if(getOS() == "iOS"){
             window.webkit.messageHandlers.myOwnJSHandler.postMessage(response);
         } else if(getOS() == "Android"){
@@ -113,24 +111,24 @@ $tap_cnf = config('tap.sandbox');
     }
 
     function receiver(ev) {
-        console.log('receiver call')
-        console.log(ev)
+        /*console.log('receiver call')
+        console.log(ev)*/
         if(ev.data.func == "tapWindowClosed"){
-            console.log('receiver tap close call')
-            console.log(ev.data.param)
+            /*console.log('receiver tap close call')
+            console.log(ev.data.param)*/
             tapWindowClosed(ev.data.param)
         } else{
-            console.log('receiver transaction done call')
-            console.log(ev.data.param)
+            /*console.log('receiver transaction done call')
+            console.log(ev.data.param)*/
             tapTransactionDone(ev.data.param)
         }
     }
 
     if (window.addEventListener) {
-        console.log('Event listener call 1')
+        //console.log('Event listener call 1')
         window.addEventListener("message", receiver, false);
     } else {
-        console.log('Event listener call else')
+        //console.log('Event listener call else')
         window.attachEvent("onmessage", receiver);
     }
 

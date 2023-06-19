@@ -33,7 +33,7 @@ trait Helpers
     {
         $response = $this->getToken($account);
         if (isset($response->access_token)){
-            $url = curl_init($this->baseUrl.$url);
+            $url = curl_init($this->baseUrl2.$url);
             $header = array(
                 'Content-Type:application/json',
                 "authorization: Bearer $response->access_token",

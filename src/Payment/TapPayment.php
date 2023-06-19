@@ -16,7 +16,7 @@ class TapPayment extends TapBaseApi
         if (isset($response->access_token)){
             $data['token'] =$response->access_token;
             $data['authAPIKey'] = config("tap.authAPIKey$account");
-            $data['popUpCloseTimeOut'] = 60;
+            $data['popUpCloseTimeOut'] = 5;
             $data['paymentMode'] = $paymentMode;
             return view('tapView::tap-payment',compact('data'))->render();
         }
